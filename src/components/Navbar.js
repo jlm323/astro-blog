@@ -12,7 +12,7 @@ function Navbar({ user, setUser }) {
             <ul>
                 <li>
                     <Link to="/">
-                        <img src="./favicon.ico" alt="React Icon" id="icon"/>
+                        home
                     </Link>
                 </li>
                 <li style={{ color: 'black' }}>
@@ -34,7 +34,7 @@ function Navbar({ user, setUser }) {
             <ul>
                 <li>
                     <Link to="/">
-                        <img src="./favicon.ico" alt="React Icon" id="icon"/>
+                        home
                     </Link>
                 </li>
                 <li>
