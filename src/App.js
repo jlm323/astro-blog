@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import axios from "axios";
 
 import Navbar from "./components/Navbar";
 
@@ -15,8 +16,30 @@ let initialRender = true
 
 function App() {
 
+    const { signName } = useParams();
+
     const [user, setUser] = useState({})
     const [isLoading, setIsLoading] = useState(true)
+    const [signs, setSigns] = useState()
+
+    const options = {
+    method: 'POST',
+    url: `https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${signName}`,
+    params: {sign: 'aquarius', day: 'today'},
+    headers: {
+        'X-RapidAPI-Key': 'b15b9401acmsh970d1bbc08b4831p1707d5jsnfef8665a116d',
+        'X-RapidAPI-Host': 'sameer-kumar-aztro-v1.p.rapidapi.com'
+    }
+    };
+
+    const handleFetch = () => {
+        axios.request(options).then(function (response) {
+        console.log(response.data);
+        setSigns(response.data)
+    }).catch(function (error) {
+        console.error(error);
+    });
+    }
 
     const currentUserInfo = async () => {
         try {
@@ -63,7 +86,7 @@ function App() {
         if (loggedIn) {
             routes = (
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Home signs={signs} handleFetch={handleFetch} />} />
                     <Route 
                         path="/profile" 
                         element={
@@ -80,7 +103,7 @@ function App() {
         } else {
             routes = (
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Home signs={signs} handleFetch={handleFetch} />} />
                     <Route path="/login" element={<Login setUser={setUser} />} />
                     <Route path="/register" element={<Register setUser={setUser} />} />
                     <Route path="*" element={<Navigate to="/login" />} />
