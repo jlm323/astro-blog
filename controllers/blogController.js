@@ -18,7 +18,26 @@ const add = async (req, res) => {
     }
 }
 
+const remove = async (req, res) => {
+    try {
+        const removeBlogPost = await BlogModel.findByIdAndDelete({ user: req.user })
+        res.status(200).json({ blogs: removeBlogPost })
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
+
+const updateBlogPost = async (req, res) => {
+    try {
+        const foundCurrentUsersBlogs = await BlogModel.findByIdAndUpdate({ user: req.user })
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
+
 module.exports = {
     index, 
-    add
+    add,
+    remove,
+    updateBlogPost
 }

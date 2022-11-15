@@ -41,7 +41,7 @@ function Login({ setUser }) {
     }
 
     return ( 
-        <>
+        <div className="content" id="login">
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
@@ -66,7 +66,7 @@ function Login({ setUser }) {
                 <br /><br />
                 <button>Submit</button>
             </form>
-        </>
+        </div>
      );
 }
 

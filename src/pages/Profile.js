@@ -1,9 +1,9 @@
 function Profile({ username, email }) {
     return ( 
-        <div>
+        <div className="content" id="profile">
             <h1>Profile</h1>
-            <p>username: {username}</p>
-            <p>email: {email}</p>
+            <p>Username: {username}</p>
+            <p>Email: {email}</p>
         </div>
         
      );

@@ -9,17 +9,17 @@ function Navbar({ user, setUser }) {
 
     if (user) {
         return (
-            <ul>
+            <ul className="navbar">
                 <li>
                     <Link to="/">
-                        home
+                        Home
                     </Link>
                 </li>
-                <li style={{ color: 'black' }}>
-                    Welcome {user}!
+                <li className="welcome-msg">
+                   Logged In: {user}
                 </li>
                 <li>
-                    <Link to="/todos">Todos</Link>
+                    <Link to="/blog">Blog</Link>
                 </li>
                 <li>
                     <Link to="/profile">Profile</Link>
@@ -31,10 +31,10 @@ function Navbar({ user, setUser }) {
         )
     } else {
         return (
-            <ul>
+            <ul className="navbar">
                 <li>
                     <Link to="/">
-                        home
+                        Home
                     </Link>
                 </li>
                 <li>

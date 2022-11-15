@@ -20,9 +20,15 @@ const add = (newBlog) => {
     return axiosBlog().post('/add', newBlog)
 }
 
+const remove = (blogId) => {
+    console.log('removing blog post', blogId)
+    return axiosBlog().delete(`/remove/${blogId}`)
+}
+
 const services = {
     index,
-    add
+    add,
+    remove
 }
 
 export default services

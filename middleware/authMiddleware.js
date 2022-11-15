@@ -29,7 +29,7 @@ function authorize(req, res, next) {
 
         req.userId = payload.id
         req.user = payload.user
-
+        console.log(req.userId)
         // 4. Move on to the requested route (next)
         next()
 
@@ -42,7 +42,4 @@ module.exports = {
     authorize
 }
 
-// /info/billy
-// authorize()
-// info()
 

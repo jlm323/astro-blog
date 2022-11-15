@@ -1,6 +1,7 @@
 
 
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 import blogService from '../services/blogService'
 
@@ -50,19 +51,24 @@ function Blog ({ user }) {
     }
 
     return ( 
-        <div>
+        <div className="content" id="blog">
             <h1>Blog</h1>
 
-            <ul>
-                {blog.map(b => 
-                    <li key={b._id}> {b.notes}</li>
+            <ul id="blog-index">
+                {blog.map((b) => {
+                    return (
+                        <li key={b._id}> {b.notes}</li>
+                    )
+                }
                 )}
             </ul>
 
-            <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}>
                 <input type="text" ref={notesRef} /><br /><br />
                 <button>Post Blog</button>
-            </form>
+            </form> */}
+
+            <Link to="/newpost">New Post</Link>
         </div>
     );
 }
