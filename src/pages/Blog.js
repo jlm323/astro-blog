@@ -1,22 +1,20 @@
 import { FaPen } from 'react-icons/fa';
 import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import blogService from '../services/blogService'
+import NewPost from './NewPost';
 
 function Blog ({ user }) {
 
     const [blog, setBlog] = useState([])
-
-    let notesRef = useRef()
+    const blogRef = useRef();
+    const navigate = useNavigate();
 
     const getAllBlogs = async () => {
 
         try {
-            
             const response = await blogService.index()
-
             setBlog(response.data.blog)
-
         } catch (error) {
             console.log(error)
         }
@@ -30,29 +28,25 @@ function Blog ({ user }) {
         event.preventDefault()
 
         let newBlog = {
-            notes: notesRef.current.value,
+            title: blogRef.current.value,
+            content: blogRef.current.value,
             user
         }
 
         try {
-
             const response = await blogService.add(newBlog)
-
             setBlog([...blog, response.data.blog])
-            notesRef.current.value = ''
-
+            navigate('/blog')
         } catch (error) {
             console.log(error)
         }
-
-        
     }
 
 
     return ( 
         <div className="content" id="blog">
             <h1>Blog</h1>
-            <div className="link-container">
+            <div className="link-container" >
                 <Link to="/newpost">
                     <span className="new-post-link">
                         New Post
@@ -61,14 +55,17 @@ function Blog ({ user }) {
                 </Link>
             </div>
 
-            {/* <ul id="blog-index">
+
+            <ul id="blog-index">
                 {blog.map((b) => {
                     return (
-                        <li key={b._id}> {b.notes}</li>
+                        <li key={b._id}> {b.title}<br/>
+                        {b.content}</li>
                     )
                 }
                 )}
-            </ul>             */}
+            </ul>            
+
         </div>
     );
 }

@@ -93,11 +93,12 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 25px;
 }
 
 .zodiac-sign {
   width: 200px;
-  margin: 5px;
+  margin: 10px;
   font-size: 20px;
   background-color: #9d4edd;
   color: #e7c6ff;
