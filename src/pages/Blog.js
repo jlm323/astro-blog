@@ -1,8 +1,6 @@
-
-
-import { useEffect, useRef, useState } from "react";
+import { FaPen } from 'react-icons/fa';
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-
 import blogService from '../services/blogService'
 
 function Blog ({ user }) {
@@ -50,25 +48,27 @@ function Blog ({ user }) {
         
     }
 
+
     return ( 
         <div className="content" id="blog">
             <h1>Blog</h1>
+            <div className="link-container">
+                <Link to="/newpost">
+                    <span className="new-post-link">
+                        New Post
+                        <FaPen className='write-icon' /> 
+                    </span>
+                </Link>
+            </div>
 
-            <ul id="blog-index">
+            {/* <ul id="blog-index">
                 {blog.map((b) => {
                     return (
                         <li key={b._id}> {b.notes}</li>
                     )
                 }
                 )}
-            </ul>
-
-            {/* <form onSubmit={handleSubmit}>
-                <input type="text" ref={notesRef} /><br /><br />
-                <button>Post Blog</button>
-            </form> */}
-
-            <Link to="/newpost">New Post</Link>
+            </ul>             */}
         </div>
     );
 }

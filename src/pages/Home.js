@@ -1,15 +1,22 @@
-
+import SignCard from "../components/SignCard";
+import signs from "../data/signs";
 
 
 export default function Home() {
 
-    // useEffect(() => {
-    //     handleFetch()
-    // }, [])
-
     return (
         <div className="content" id="home">
             <h1>Astro Blog</h1>
+
+            <div className="all-signs">
+               
+                    {signs.map((s, i) => {
+                        return (
+                            <SignCard key={i} signs={s} />
+                        )
+                    })}
+               
+            </div>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi cras fermentum odio eu feugiat. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel. Sociis natoque penatibus et magnis. Id aliquet risus feugiat in ante metus dictum. Id venenatis a condimentum vitae. Amet purus gravida quis blandit turpis cursus in. Vel pharetra vel turpis nunc eget. Purus ut faucibus pulvinar elementum integer enim neque volutpat. Non quam lacus suspendisse faucibus interdum. Sagittis vitae et leo duis. Laoreet id donec ultrices tincidunt arcu non sodales. Mattis pellentesque id nibh tortor id aliquet lectus proin nibh. At consectetur lorem donec massa sapien faucibus et molestie. In aliquam sem fringilla ut morbi tincidunt augue interdum. Euismod in pellentesque massa placerat duis ultricies lacus sed. Blandit aliquam etiam erat velit.</p>
 
@@ -23,34 +30,5 @@ export default function Home() {
                 </p>
         </div>
     )
-
-    // const loaded = () => {
-    //     return (
-    //         <div>
-    //             <h1>Astro Blog</h1>
-    //             {/* <div className="all-signs">
-    //                 {signs?.map((sign) => {
-    //                     return (
-    //                         <div key={sign.id} className="sign-name">
-    //                             {sign.name}
-    //                         </div>
-    //                     )
-    //                 })}
-    //             </div> */}
-    //         </div>
-            
-    //     )
-    // }
-
-    // const loading = () => {
-    //     return (
-    //         <div>
-    //             <h1>Astro Blog</h1>
-    //             <h2>Loading...</h2>
-    //         </div>
-    //     )
-    // }
-
-    // return signs ? loaded() : loading()
     
 }

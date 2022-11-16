@@ -3,8 +3,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const blogSchema = new Schema({
-    notes: { type: String, required: true },
+    title: { type: String, required: true },
+    content: { type: String, required: true },
     user: { type: String, required: true }
+},{
+    timestamps: true,
 })
 
 const BlogModel = mongoose.model('Blog', blogSchema)

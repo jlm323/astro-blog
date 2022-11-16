@@ -1,5 +1,7 @@
-const User = require('../models/User')
+const User = require('../models/User');
+const bcrypt = require('bcrypt');
 
+// GET user info
 const info = async (req, res) => {
     // req.params.username
     // req.userId
@@ -18,6 +20,7 @@ const info = async (req, res) => {
     }
 }
 
+// GET all users
 const allUsers = async (req, res) => {
     try {
         const users = await User.find({})
@@ -27,6 +30,7 @@ const allUsers = async (req, res) => {
     }   
 }
 
+// clear users
 const clear = async (req, res) => {
     try {
         await User.deleteMany({})
@@ -36,8 +40,32 @@ const clear = async (req, res) => {
     }
 }
 
+// PUT update user
+const updateUser = async (req, res) => {
+    if (req.body.userId === req.params.id) {
+        if(req.body.password){
+            const salt = await bcrypt.genSalt(10);
+            req.body.password = await bcrypt.hash(req.body.password, salt);
+        }
+    
+
+        try {
+            const updatedUser = await User.findByIdAndUpdate(req.params.id, {
+                $set: req.body
+            });
+            res.status(200).json(updatedUser)
+           
+        } catch (error) {
+            res.status(500).json(error)
+        } 
+    } else {
+        res.status(401).json("You can only update your account.")
+    }
+}
+
 module.exports = {
     info,
     allUsers,
-    clear
+    clear,
+    updateUser
 }

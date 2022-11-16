@@ -10,52 +10,31 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Blog from "./pages/Blog";
 import NewPost from "./pages/NewPost";
+
+import userService from './services/userService';
+import SignInfo from "./pages/SignInfo";
+import signs from "./data/signs";
  
 
 let initialRender = true
 
 function App() {
 
-    // const { signName } = useParams();
-
     const [user, setUser] = useState({})
     const [isLoading, setIsLoading] = useState(true)
-    // const [signs, setSigns] = useState()
-
-    // const options = {
-    // method: 'POST',
-    // url: `https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${signName}`,
-    // params: {sign: 'aquarius', day: 'today'},
-    // headers: {
-    //     'X-RapidAPI-Key': 'b15b9401acmsh970d1bbc08b4831p1707d5jsnfef8665a116d',
-    //     'X-RapidAPI-Host': 'sameer-kumar-aztro-v1.p.rapidapi.com'
-    // }
-    // };
-
-    // const handleFetch = () => {
-    //     axios.request(options).then(function (response) {
-    //     console.log(response.data);
-    //     setSigns(response.data)
-    // }).catch(function (error) {
-    //     console.error(error);
-    // });
-    // }
+    
 
     const currentUserInfo = async (token) => {
 
     try {
-       const info = await axios.get("http://localhost:8000/users/info/:username", {
-         headers: {
-           Authorization: `Bearer ${token}`,
-         },
-       });
+        const info = await userService.info()
        console.log(info);
        const { username, email } = info.data;
        setUser({ username, email });
      } catch (error) {
        let message = error.response.data.error;
 
-       if (message?.includes("expire")) {
+       if (message.includes("expire")) {
          localStorage.removeItem("token");
        }
 
@@ -88,8 +67,7 @@ function App() {
             routes = (
                 <Routes>
                     <Route path="/" element={<Home 
-                        // signs={signs} 
-                        // handleFetch={handleFetch}
+                        signs={signs} 
                          />} />
                     <Route 
                         path="/profile" 
@@ -102,6 +80,7 @@ function App() {
                     />
                     <Route path='/blog' element={<Blog user={user.username} />} />
                     <Route path='/newpost' element={<NewPost user={user.username} />} />
+                    <Route path='/signinfo' element={<SignInfo signs={signs} />} />
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
             )
@@ -109,11 +88,11 @@ function App() {
             routes = (
                 <Routes>
                     <Route path="/" element={<Home 
-                        // signs={signs} 
-                        // handleFetch={handleFetch} 
+                        signs={signs}  
                     />} />
                     <Route path="/login" element={<Login setUser={setUser} />} />
                     <Route path="/register" element={<Register setUser={setUser} />} />
+                    <Route path='/signinfo' element={<SignInfo signs={signs} />} />
                     <Route path="*" element={<Navigate to="/login" />} />
                 </Routes>
             )

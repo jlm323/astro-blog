@@ -40,7 +40,7 @@ h1 {
 }
 
 .navbar li:hover a {
-  color: #ffd6ff;
+  color: #c77dff;
 }
 
 ul {
@@ -81,9 +81,63 @@ p {
   font-size: 18px;
 }
 
-#register, #login {
+#register, #login, #new-post {
   display: flex;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
+}
+
+.all-signs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.zodiac-sign {
+  width: 200px;
+  margin: 5px;
+  font-size: 20px;
+  background-color: #9d4edd;
+  color: #e7c6ff;
+  text-align: center;
+  border-radius: 5px;;
+}
+
+.sign-info {
+  font-size: 14px;
+  color: black;
+}
+
+.postLabel, .titleLabel {
+  color: #5a189a;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.write, .writeTitle {
+  font-size: 16px;
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+.write {
+  width: 50vw;
+  height: 200px;
+}
+
+.writeTitle {
+  width: 50vw;
+}
+
+.write-icon {
+  padding-left: 5px;
+}
+
+.new-post-link {
+  font-weight: bold;
+}
+
+.new-post-link:hover, .write-icon:hover {
+  color: #9d4edd;
 }
