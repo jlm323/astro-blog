@@ -72,7 +72,7 @@ function Register({ setUser }) {
                     value={form.password}
                 />
                 <br /><br />
-                <button>Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
      );

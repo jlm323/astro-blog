@@ -61,11 +61,11 @@ function Blog ({ user }) {
                 {articles.map(a => {
                     return (
                         <div key={a._id} className="one-article">
-                            {a.image}<br/>
-                            {a.title}<br/>
-                            {a.author}<br/>
-                            {a.time}<br/>
-                            {a.content}
+                           <img src= {a.image} className="article-img" alt="article" /><br/>
+                            <h3>{a.title}</h3>
+                            <span className="author">{a.author}</span><br/>
+                            <span className="timestamp">{a.time}</span><br/>
+                            <span className="text-content">{a.content}</span>
                         </div>
                     )
                 })}

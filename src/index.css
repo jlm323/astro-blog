@@ -29,6 +29,7 @@ h1 {
   text-align: center;
   color: #240046;
   font-family: 'Didact Gothic', sans-serif;
+  font-weight: bold;
   margin: 20px 0 20px 0;
 }
 
@@ -36,8 +37,8 @@ h1 {
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
-  width: 150px;
+  justify-content: flex-start;
+  width: 160px;
   height: 100%;
   /* position: fixed; */
   /* background-color: #9d4edd; */
@@ -46,6 +47,7 @@ h1 {
 
 .navbar li:hover a {
   color: #c77dff;
+  text-decoration: none;
 }
 
 ul {
@@ -85,6 +87,40 @@ p {
   font-size: 18px;
 }
 
+.home-pg {
+  text-align: center;
+}
+
+.mini-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mini-info {
+  width: 300px;
+  margin: 5px;
+  padding: 15px;
+}
+
+.sign-label {
+  color: #5a189a;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.element-label, .mode-label {
+  color: gray;
+}
+
+.circle {
+  color: #9d4edd;
+  font-size: 8px;
+}
+
 #register, #login, #new-post {
   display: flex;
   flex-direction: column;
@@ -112,7 +148,40 @@ p {
 
 .sign-info {
   font-size: 14px;
+  font-weight: bold;
   color: black;
+}
+
+#blog-index {
+  display: flex;
+  flex-direction: row;
+}
+
+.one-article {
+  width: 50%;
+  margin: 5px;
+  padding: 25px;
+  border: 1px solid #9d4edd;
+}
+
+.author {
+  color: #5a189a;
+  font-weight: bold;
+}
+
+.timestamp {
+  color: #9d4edd;
+  font-size: 16px;
+}
+
+.article-img {
+  width: 300px;
+  height: 200px;
+  margin-left: 10%;
+}
+
+.text-content {
+  font-size: 17px;
 }
 
 .postLabel, .titleLabel {
@@ -143,8 +212,17 @@ p {
 
 .new-post-link {
   font-weight: bold;
+  font-size: 18px;
+  
 }
 
 .new-post-link:hover, .write-icon:hover {
   color: #9d4edd;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #5a189a;
+  border: #5a189a;
+  text-align: center;
 }
