@@ -33,7 +33,7 @@ function Register({ setUser }) {
 
         } catch (error) {
             console.log(error.response.data.error)
-            alert(error.response.data.error)
+            //alert(error.response.data.error)
         }
 
     }
@@ -50,6 +50,7 @@ function Register({ setUser }) {
                     name="username"
                     onChange={handleChange}
                     value={form.username}
+                    autoComplete="off"
                 />
                 <br /><br />
                 <label htmlFor="email">Email:</label>
@@ -60,6 +61,7 @@ function Register({ setUser }) {
                     name="email"
                     onChange={handleChange}
                     value={form.email}
+                    autoComplete="off"
                 />
                 <br /><br />
                 <label htmlFor="password">Password:</label>
@@ -70,6 +72,7 @@ function Register({ setUser }) {
                     name="password"
                     onChange={handleChange}
                     value={form.password}
+                    autoComplete="off"
                 />
                 <br /><br />
                 <button type="submit" class="btn btn-primary">Submit</button>

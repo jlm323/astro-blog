@@ -15,7 +15,7 @@ export default function NewPost({user, handleSubmit}) {
                 <label htmlFor="post" className="postLabel">Blog Post: </label><br/>
                 <textarea placeholder="Write your blog post here..." type="text" className="write"></textarea>
                 <br/><br/>
-                <button name="submit">Post</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     )

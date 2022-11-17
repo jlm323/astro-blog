@@ -52,6 +52,7 @@ function Login({ setUser }) {
                     name="username"
                     onChange={handleChange}
                     value={form.username}
+                    autoComplete="off"
                 />
                 <br /><br />
                 <label htmlFor="password">Password:</label>
@@ -62,6 +63,7 @@ function Login({ setUser }) {
                     name="password"
                     onChange={handleChange}
                     value={form.password}
+                    autoComplete="off"
                 />
                 <br /><br />
                 <button type="submit" class="btn btn-primary">Submit</button>

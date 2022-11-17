@@ -9,6 +9,8 @@ export default function Home() {
         <div className="content" id="home">
             <h1>Astro Blog</h1>
 
+            <img src="./stars.jpg" alt="header" className="header" />
+
             <div className="all-signs">
                
                     {signs.map((s, i) => {

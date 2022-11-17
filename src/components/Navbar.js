@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaUserAlt } from 'react-icons/fa';
 
 function Navbar({ user, setUser }) {
 
@@ -21,7 +22,7 @@ function Navbar({ user, setUser }) {
                     </Link>
                 </li>
                 <li className="welcome-msg">
-                   Logged In: {user}
+                   Logged In As:<br/> <FaUserAlt className="logged-in" /> {user}
                 </li>
                 <li>
                     <Link to="/blog">Blog</Link>

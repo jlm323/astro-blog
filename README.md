@@ -8,7 +8,7 @@ Astro Blog is a fullstack MERN application that includes login authentication. U
 
 ## Built With
 
-MongoDB, Express, React, Node, HTML, CSS
+MongoDB, Express, React, Node, HTML, CSS, Bootstrap
 
 ## Future Implementations
 
@@ -23,7 +23,9 @@ Author: [Jessica Milewski](http://github.com/jlm323)
 ## Acknowledgements
 
 Sign info and descriptions: 
-[Labyrinthos](https://labyrinthos.co/blogs/astrology-horoscope-zodiac-signs/list-of-12-zodiac-signs-dates-meanings-symbols)
-[Astro.com](https://www.astro.com/astrology/in_signs_e.htm)
+- [Labyrinthos](https://labyrinthos.co/blogs/astrology-horoscope-zodiac-signs/list-of-12-zodiac-signs-dates-meanings-symbols)
+- [Astro.com](https://www.astro.com/astrology/in_signs_e.htm)
+- [Brittanica](https://www.britannica.com/place/Capricorn)
+
 Color palette:
-[Coolors](https://coolors.co/)
+- [Coolors](https://coolors.co/)

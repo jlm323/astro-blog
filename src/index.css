@@ -21,6 +21,12 @@
     grid-gap: 10px;
 }
 
+.header {
+  width: 75vw;
+  height: 200px;
+  object-fit: cover;
+}
+
 body {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -225,4 +231,8 @@ p {
   background-color: #5a189a;
   border: #5a189a;
   text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: #9d4edd;
 }
