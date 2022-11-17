@@ -6,6 +6,8 @@ function Profile({ username, email }) {
             <p>Email: {email}</p>
             <p>Edit profile</p>
 
+            
+
         <form action="#">
         <label htmlFor="allSigns">Sign:</label>
             <select name="signs" id="sign">

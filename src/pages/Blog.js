@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import blogService from '../services/blogService'
 import NewPost from './NewPost';
+import articles from '../data/articles';
 
 function Blog ({ user }) {
 
@@ -57,13 +58,17 @@ function Blog ({ user }) {
 
 
             <ul id="blog-index">
-                {blog.map((b) => {
+                {articles.map(a => {
                     return (
-                        <li key={b._id}> {b.title}<br/>
-                        {b.content}</li>
+                        <div key={a._id} className="one-article">
+                            {a.image}<br/>
+                            {a.title}<br/>
+                            {a.author}<br/>
+                            {a.time}<br/>
+                            {a.content}
+                        </div>
                     )
-                }
-                )}
+                })}
             </ul>            
 
         </div>
@@ -71,3 +76,16 @@ function Blog ({ user }) {
 }
 
 export default Blog ;
+
+
+
+/*
+{blog.map((b) => {
+                    return (
+                        <li key={b._id}> {b.title}<br/>
+                        {b.content}</li>
+                    )
+                }
+                )}
+
+*/

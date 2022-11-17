@@ -12,6 +12,11 @@ function Navbar({ user, setUser }) {
             <ul className="navbar">
                 <li>
                     <Link to="/">
+                    <img src="./site-logo.png" alt="Astro Blog" id="site-logo" />
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/">
                         Home
                     </Link>
                 </li>
@@ -32,6 +37,11 @@ function Navbar({ user, setUser }) {
     } else {
         return (
             <ul className="navbar">
+                <li>
+                    <Link to="/">
+                    <img src="./site-logo.png" alt="Astro Blog" id="site-logo"/>
+                    </Link>
+                </li>
                 <li>
                     <Link to="/">
                         Home

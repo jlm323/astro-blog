@@ -2,6 +2,11 @@
   margin: 0;
 }
 
+#site-logo {
+  width: 130px;
+  height: 130px;
+}
+
 .app {
     display: grid;
     /* grid-template-columns: repeat(5, 1fr); */
@@ -49,7 +54,6 @@ ul {
 }
 
 li {
-  height: 30px;
   margin-bottom: 25px;
   margin-top: 15px;
 }
@@ -120,6 +124,8 @@ p {
 .write, .writeTitle {
   font-size: 16px;
   font-family: 'Didact Gothic', sans-serif;
+  border: none;
+  border-bottom: 1px solid gray;
 }
 
 .write {
